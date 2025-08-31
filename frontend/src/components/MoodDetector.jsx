@@ -44,7 +44,8 @@ const MoodDetector = ({ setSongs }) => {
   useEffect(() => {
     if (mood && mood !== "No face detected") {
 
-      axios.get(`http://localhost:3000/songs?mood=${mood}`)
+      axios.get(`${import.meta.env.VITE_API_URL}/songs?mood=${mood}`)
+
     .then((response) => {
       setSongs(response.data.songs);
     })
